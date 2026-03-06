@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
 <meta charset="UTF-8">
 <title>Recipe Secrets</title>
 
 <link rel="stylesheet" href="css/style.css">
 <script defer src="js/script.js"></script>
-
 </head>
+
 <body>
+
 <div class="top-bar">
   <div class="logo">Recipe Secrets</div>
   <div class="contacts">
@@ -18,33 +18,31 @@
 </div>
 <!-- === Главная секция (шапка) === -->
 <section id="home" class="hero">
-
   <img src="img/convertio.in_main.png">
-
   <div class="hero-text">
     <h1>Добро пожаловать в клуб</h1>
     <h2>Recipe Secrets</h2>
   </div>
-
-  <header class="main-header">
-    <nav class="navbar">
-      <ul>
-        <li><a href="#home">Главная</a></li>
-        <li><a href="#master-classes">Атмосфера</a></li>
-        <li><a href="#calendar">Календарь</a></li>
-        <li><a href="#daily-recipe">Рецепт дня</li>
-        <li><a href="#reviews">Отзывы</a></li>
-        <li><a href="#contacts">Контакты</a></li>
-      </ul>
-    </nav>
-  </header>
 </section>
+<!-- === Навигация вынесена из секции === -->
+<header class="main-header">
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Главная</a></li>
+      <li><a href="#master-classes">Атмосфера</a></li>
+      <li><a href="#calendar">Календарь</a></li>
+      <li><a href="#daily-recipe">Рецепт дня</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </nav>
+</header>
+
+
 
 <!-- === О клубе === -->
 <section class="about">
-
 <h2>Клуб кулинаров</h2>
-
 <p>
 Recipe Secrets — это уютный кулинарный клуб,  
 где проходят мастер-классы по приготовлению различных блюд.
@@ -52,31 +50,23 @@ Recipe Secrets — это уютный кулинарный клуб,
 Участники клуба учатся готовить вместе с профессиональными поварами,  
 общаются, пробуют новые рецепты и проводят время в приятной атмосфере.
 </p>
-
 </section>
 
 <!-- === Фотоколлаж / мастер-классы === -->
 <section id="master-classes" class="gallery">
-
 <h2>Атмосфера клуба</h2>
-
 <div class="gallery-grid">
-
-<img src="img/convertio.in_class1.png">
-<img src="img/convertio.in_interior1.png">
-<img src="img/convertio.in_class2.png">
-<img src="img/convertio.in_dessert2.png">
-<img src="img/convertio.in_interior.png">
-
+  <img src="img/convertio.in_class1.png">
+  <img src="img/convertio.in_interior1.png">
+  <img src="img/convertio.in_class2.png">
+  <img src="img/convertio.in_dessert2.png">
+  <img src="img/convertio.in_interior.png">
 </div>
-
 </section>
 
 <!-- === Календарь === -->
 <section id="calendar" class="calendar-section">
-
 <h2>Календарь мастер-классов</h2>
-
 <div class="calendar">
   <div class="calendar-header">
     <button id="prevMonth">&lt;</button>
@@ -94,11 +84,12 @@ Recipe Secrets — это уютный кулинарный клуб,
   </div>
   <div id="dates" class="calendar-dates"></div>
 </div>
-
 <p class="calendar-note">
 События обновляются каждую неделю. Следите за мастер-классами!
 </p>
-<!-- Рецепт дня -->
+</section>
+
+<!-- === Рецепт дня === -->
 <section class="daily-recipe" id="daily-recipe">
   <h2>Рецепт дня</h2>
   <div class="recipe-card">
@@ -114,8 +105,8 @@ Recipe Secrets — это уютный кулинарный клуб,
   <p class="recipe-note">Каждый день мы обновляем рецепт для вас!</p>
 </section>
 
-<!-- Отзывы -->
-<section class="reviews-section">
+<!-- === Отзывы === -->
+<section class="reviews-section" id="reviews">
   <h2>Отзывы участников</h2>
   <div class="reviews-container">
     <div class="review">
@@ -132,6 +123,7 @@ Recipe Secrets — это уютный кулинарный клуб,
     </div>
   </div>
 </section>
+
 <footer class="club-footer" id="contacts">
   <div class="footer-container">
     <h1 class="club-title">Recipe Secrets</h1>
@@ -143,5 +135,4 @@ Recipe Secrets — это уютный кулинарный клуб,
 </footer>
 
 </body>
-
 </html>
