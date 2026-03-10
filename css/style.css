@@ -1,54 +1,35 @@
 @font-face{
-font-family: TikTokSans;
-src: url('../fonts/TikTokSans.ttf');
+  font-family: TikTokSans;
+  src: url('../fonts/TikTokSans.ttf');
+}
+@font-face{
+  font-family: BukaMono;
+  src: url('../fonts/BukaMono.ttf');
 }
 
-@font-face{
-font-family: BukaMono;
-src: url('../fonts/BukaMono.ttf');
-}
-/* === Плавный скролл для навигации === */
 html {
   scroll-behavior: smooth;
 }
 
-/* === Навигация закреплена и красиво видна === */
-.navbar {
-  background-color: (255, 255, 255, 0.2); /* тёмный шоколад */
-  padding: 10px 0;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* Ссылки уже есть, оставляем hover */
 body{
-
-margin:0;
-background:#f2e4d5;
-font-family: TikTokSans;
-
+  margin:0;
+  background:#f2e4d5;
+  font-family: TikTokSans;
 }
-
 
 .top-bar{
-
-background:#3a1f14;
-color:white;
-
-display:flex;
-justify-content:space-between;
-
-padding:12px 40px;
-
+  background:#3a1f14;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  padding:12px 40px;
 }
-/* === Навигационная панель === */
+
 .navbar {
-  background-color: #3e2b1f; /* тёмный шоколад */
-  padding: 10px 0; /* чуть выше и ниже */
+  background-color: #3e2b1f; 
+  padding: 10px 0;
   text-align: center;
-  position: sticky; /* чтобы панель оставалась при прокрутке */
+  position: relative;
   top: 0;
   z-index: 1000;
 }
@@ -58,153 +39,105 @@ padding:12px 40px;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* центруем ссылки */
-  gap: 30px; /* расстояние между пунктами */
+  justify-content: center;
+  gap: 30px;
 }
 
 .navbar ul li a {
   text-decoration: none;
   color: white;
-  font-family: 'BukaMono', monospace; /* основной шрифт */
+  font-family: 'BukaMono', monospace;
   font-size: 16px;
   transition: all 0.3s ease;
 }
 
 .navbar ul li a:hover {
-  color: #d9b48f; /* бежевый при наведении */
-  transform: scale(1.1); /* слегка увеличиваем ссылку */
+  color: #d9b48f;
+  transform: scale(1.1);
 }
+
 .hero img{
-
-width:90%;
-margin:30px auto;
-display:block;
-
-border-radius:25px;
-
+  width:90%;
+  margin:30px auto;
+  display:block;
+  border-radius:25px;
 }
-
-
 
 .logo{
-
-font-family:BukaMono;
-font-size:20px;
-
+  font-family:BukaMono;
+  font-size:20px;
 }
 
-
 .hero{
-
-text-align:center;
-position:relative;
-
+  text-align:center;
+  position:relative;
 }
 
 .hero-text{
-
-position:absolute;
-
-top:45%;
-left:50%;
-
-transform:translate(-50%,-50%);
-
-color:white;
-
+  position:absolute;
+  top:45%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:white;
 }
-
 
 .hero-text h1{
-
-font-size:40px;
-
+  font-size:40px;
 }
-
 
 .hero-text h2{
-
-font-size:60px;
-font-family:BukaMono;
-
+  font-size:60px;
+  font-family:BukaMono;
 }
-
-
 
 .about{
-
-width:70%;
-margin:40px auto;
-text-align:center;
-
+  width:70%;
+  margin:40px auto;
+  text-align:center;
 }
-
 
 .gallery{
-
-text-align:center;
-
+  text-align:center;
 }
-
 
 .gallery-grid{
-
-display:flex;
-justify-content:center;
-
-gap:25px;
-
-flex-wrap:wrap;
-
-margin:30px;
-
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  margin:30px;
 }
-
 
 .gallery-grid img{
-
-width:220px;
-
-border-radius:20px;
-
-transition:0.4s;
-
+  width:220px;
+  border-radius:20px;
+  transition:0.4s;
 }
-
 
 .gallery-grid img:hover{
-
-transform:scale(1.1);
-
+  transform:scale(1.1);
 }
-
-
 
 .calendar-section{
-
-text-align:center;
-
-margin:50px;
-
+  text-align:center;
+  margin:50px;
 }
 
-/* === Стили для календаря Recipe Secrets === */
 .calendar {
   width: 700px;
   margin: 20px auto;
   font-family: 'TikTok Sans', sans-serif;
-  color: #3e2b1f; /* основной шоколадный цвет для текста */
+  color: #3e2b1f;
 }
 
-/* === Календарь — заголовок месяца === */
 .calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(90, 62, 43, 0.8); /* тёмный шоколад с прозрачностью */
-  color: #3a1f14; /* тёмный шоколад для текста месяца */
-  font-family: 'BukaMono', monospace; /* шрифт для месяца */
-  font-size: 20px; /* чуть крупнее */
+  background-color: rgba(90, 62, 43, 0.8);
+  color: #3a1f14;
+  font-family: 'BukaMono', monospace;
+  font-size: 20px;
   padding: 10px;
   border-radius: 8px 8px 0 0;
 }
@@ -236,28 +169,28 @@ margin:50px;
   font-weight: bold;
   padding: 10px 0;
   border-bottom: 1px solid rgba(200, 200, 200, 0.2);
-  background-color: #f5f0e6; /* светлый бежевый фон для дней недели */
-  color: #3e2b1f; /* шоколадный для текста дней недели */
+  background-color: #f5f0e6;
+  color: #3e2b1f;
 }
 
 .day {
   padding: 15px 0;
   margin: 2px;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.2); /* прозрачные кнопки */
+  background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
   transition: transform 0.2s, background-color 0.2s;
   font-size: 16px;
-  color: #3e2b1f; /* шоколадный текст */
+  color: #3e2b1f;
 }
 
 .day:hover {
   transform: scale(1.1);
-  background-color: rgba(255, 255, 255, 0.3); /* чуть ярче при наведении */
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .day.event {
-  background-color: #d6b38c; /* светлый шоколад для дней с событием */
+  background-color: #d6b38c;
   font-weight: bold;
 }
 
@@ -268,59 +201,62 @@ margin:50px;
   cursor: default;
 }
 
-/* Текст под календарем */
 .calendar-note {
   font-family: 'BukaMono', monospace;
-  color: rgba(60, 60, 60, 0.6); /* светлее и прозрачнее */
+  color: rgba(60, 60, 60, 0.6);
   font-size: 16px;
   margin-top: 15px;
   font-style: italic;
 }
+
 .daily-recipe {
   text-align: center;
-  margin: 50px auto;
+  margin: 40px auto;
 }
+
 .recipe-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   max-width: 700px;
   margin: 0 auto;
-  gap: 0;
 }
-/* Стили только для картинки рецепта */
+
 .recipe-card img {
-  width: 150px;         /* уменьшенный размер */
+  width: 150px;
   height: 150px;
-  border-radius: 50%;   /* делает кружок */
-  object-fit: cover;    /* чтобы картинка не растягивалась */
+  border-radius: 50%;
+  object-fit: cover;
   display: block;
-  margin: 0 auto 15px;  /* по центру с отступом снизу */
+  margin: 0 auto 15px;
 }
+
 .recipe-info {
   text-align: center;
   font-family: 'BukaMono', monospace;
 }
+
 .recipe-info h3 {
   font-family: 'BukaMono', monospace;
   font-size: 24px;
   margin-bottom: 10px;
 }
+
 .recipe-info p {
   font-family: 'BukaMono', monospace;
   font-size: 16px;
   margin-bottom: 10px;
 }
+
 .recipe-info ul {
-  text-align: left; /* нумерация слева */
+  text-align: left;
   padding-left: 20px;
   margin: 0 auto 10px auto;
   font-family: 'BukaMono', monospace;
 }
+
 .recipe-note {
-  font-family: 'BukaMono', monospace;
-  font-size: 16px;
+  font-family: 'BukaMono', monospace;font-size: 16px;
   color: rgba(62, 43, 31, 0.7);
   font-style: italic;
   margin-top: 10px;
@@ -341,11 +277,11 @@ margin:50px;
 }
 
 .review {
-  background-color: #f5f0e6; /* светлый фон */
+  background-color: #f5f0e6;
   border-radius: 15px;
   padding: 20px;
   max-width: 300px;
-  opacity: 0; /* изначально скрыты для анимации */
+  opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
 }
@@ -357,11 +293,12 @@ margin:50px;
 
 .review span {
   font-size: 14px;
-  font-family: 'Buka Mono', monospace;
+  font-family: 'BukaMono', monospace;
   color: #3e2b1f;
 }
+
 .club-footer {
-  background-color: #3a1f14; /* шоколадный цвет */
+  background-color: #3a1f14;
   padding: 15px 0;
   display: flex;
   justify-content: center;
@@ -370,19 +307,19 @@ margin:50px;
 .club-footer .footer-container {
   display: flex;
   align-items: center;
-  gap: 20px; /* расстояние между элементами */
-  color: #f2e4d5; /* светлый текст */
-  font-family: 'Buka Mono', monospace;
+  gap: 20px;
+  color: #f2e4d5;
+  font-family: 'BukaMono', monospace;
 }
 
 .club-footer .club-title {
-  font-family: 'Buka Mono', monospace;
+  font-family: 'BukaMono', monospace;
   font-size: 20px;
   margin: 0;
 }
 
 .club-footer .social-link {
-  color: #d9b48f; /* бежевый для Pinterest */
+  color: #d9b48f;
   text-decoration: none;
   font-weight: bold;
   transition: transform 0.2s;
@@ -391,9 +328,8 @@ margin:50px;
 .club-footer .social-link:hover {
   transform: scale(1.1);
 }
-html {
-  scroll-behavior: smooth;
-}
+
+/* Анимации */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -406,7 +342,7 @@ html {
     transform: translateY(0);
   }
 }
-/* Анимация появления рецепта при скролле */
+
 .daily-recipe {
   opacity: 0;
   transform: translateY(50px);
@@ -416,4 +352,38 @@ html {
 .daily-recipe.visible {
   opacity: 1;
   transform: translateY(0);
+}
+section {
+  margin: 60px auto;
+  padding-top: 40px;
+  border-top: 1px solid rgba(62, 43, 31, 0.15);
+}
+section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+.review {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.fade-in {
+  animation: recipeFade 0.8s ease;
+}
+
+@keyframes recipeFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

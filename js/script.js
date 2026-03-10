@@ -7,16 +7,15 @@ let today = new Date();
 let currentMonth = today.getMonth();
 let currentYear = today.getFullYear();
 
-// Пример событий
 const events = {
-  "2026-03-06": "Мастер-класс: шоколадные кексы 12:00-15:00",
-  "2026-03-07": "Мастер-класс: украшение тортов 14:00-17:00",
-  "2026-03-08": "Мастер-класс: пирожные 11:00-14:00",
-  "2026-03-09": "Мастер-класс: круассаны 10:00-13:00",
-  "2026-03-10": "Мастер-класс: пончики 12:00-15:00",
-  "2026-03-11": "Мастер-класс: итальянская паста с креветками 13:00-16:30",
+  "2026-03-11": "Мастер-класс: ризотто с грибами с креветками 13:00-16:30",
   "2026-03-12": "Мастер-класс: тарталетки со вкусом на ваш выбор 12:00-15:00",
-  "2026-03-13": "Мастер-класс: лимонады 17:00-18:00"
+  "2026-03-13": "Мастер-класс: лимонады 17:00-18:00",
+  "2026-03-14": "Мастер-класс: шоколадные кексы 12:00-15:00",
+  "2026-03-15": "Мастер-класс: украшение тортов 14:00-17:00",
+  "2026-03-16": "Мастер-класс: пирожные 11:00-14:00",
+  "2026-03-17": "Мастер-класс: круассаны 10:00-13:00",
+  "2026-03-18": "Мастер-класс: пончики 12:00-15:00",
 };
 
 function renderCalendar(month, year) {
@@ -24,7 +23,6 @@ function renderCalendar(month, year) {
   const firstDay = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  // пустые ячейки перед первым днём месяца
   let emptyDivs = (firstDay + 6) % 7;
   for (let i = 0; i < emptyDivs; i++) {
     const emptyDiv = document.createElement("div");
@@ -60,7 +58,6 @@ function renderCalendar(month, year) {
   monthName.textContent = new Date(year, month).toLocaleString('ru-RU', { month: 'long' }) + " " + year;
 }
 
-// Листание месяцев
 prevBtn.addEventListener("click", () => {
   currentMonth--;
   if(currentMonth < 0){ currentMonth = 11; currentYear--; }
@@ -72,29 +69,88 @@ nextBtn.addEventListener("click", () => {
   renderCalendar(currentMonth, currentYear);
 });
 
-// Инициализация календаря
 renderCalendar(currentMonth, currentYear);
 
 // === Рецепт дня ===
 const recipes = [
-  {
-    title: "Шоколадные маффины",
-    description: "Нежные маффины с кусочками темного шоколада. Отлично к кофе!",
-    img: "img/5285242297987568999.png",
-    ingredients: ["Мука — 150 г", "Сахар — 100 г", "Шоколад — 50 г", "Яйца — 2 шт", "Молоко — 100 мл"]
-  },
-  {
-    title: "Паста с креветками",
-    description: "Итальянская паста с креветками и сливочным соусом.",
-    img: "img/convertio.in_5285242297987569121.png",
-    ingredients: ["Паста — 200 г", "Креветки — 150 г", "Чеснок — 2 зубчика", "Сливки — 100 мл", "Оливковое масло — 1 ст.л."]
-  },
-  {
-    title: "Салат Цезарь",
-    description: "Классический салат с курицей и соусом Цезарь.",
-    img: "img/convertio.in_5285242297987569046",
-    ingredients: ["Куриное филе — 150 г", "Листья салата — 100 г", "Сухарики — 50 г", "Сыр Пармезан — 30 г", "Соус Цезарь — 2 ст.л."]
-  }
+
+{
+title: "Шоколадные маффины",
+description: "Нежные маффины с кусочками темного шоколада. Отлично к кофе!",
+img: "img/маффины.png",
+ingredients: [
+"Мука — 150 г",
+"Сахар — 100 г",
+"Шоколад — 50 г",
+"Яйца — 2 шт",
+"Молоко — 100 мл"
+]
+},
+
+{
+title: "Паста с креветками",
+description: "Итальянская паста с креветками и сливочным соусом.",
+img: "img/паста с креветками.png",
+ingredients: [
+"Паста — 200 г",
+"Креветки — 150 г",
+"Чеснок — 2 зубчика",
+"Сливки — 100 мл",
+"Оливковое масло — 1 ст.л."
+]
+},
+
+{
+title: "Салат Цезарь",
+description: "Классический салат с курицей и соусом Цезарь.",
+img: "img/цезарь.png",
+ingredients: [
+"Куриное филе — 150 г",
+"Листья салата — 100 г",
+"Сухарики — 50 г",
+"Сыр Пармезан — 30 г",
+"Соус Цезарь — 2 ст.л."
+]
+},
+
+{
+title: "Панкейки",
+description: "Пышные американские панкейки для завтрака.",
+img: "img/панкейки.png",
+ingredients: [
+"Мука — 200 г",
+"Молоко — 250 мл",
+"Яйцо — 1 шт",
+"Сахар — 2 ст.л.",
+"Разрыхлитель — 1 ч.л."
+]
+},
+
+{
+title: "Ризотто с грибами",
+description: "Кремовое итальянское ризотто с шампиньонами.",
+img: "img/ризотто.png",
+ingredients: [
+"Рис арборио — 200 г",
+"Шампиньоны — 150 г",
+"Лук — 1 шт",
+"Пармезан — 40 г",
+"Сливочное масло — 30 г"
+]
+},
+
+{
+title: "Круассаны",
+description: "Французские слоёные круассаны.",
+img: "img/круассаны.png",
+ingredients: [
+"Слоёное тесто — 400 г",
+"Сливочное масло — 50 г",
+"Яйцо — 1 шт",
+"Сахарная пудра"
+]
+}
+
 ];
 
 function showDailyRecipe() {
@@ -119,53 +175,36 @@ function showDailyRecipe() {
     li.textContent = ing;
     ulEl.appendChild(li);
   });
-// Анимация рецепта при скролле
-function animateOnScroll(element) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    },
-    { threshold: 0.3 } // появление, когда 30% блока в зоне видимости
-  );
-  observer.observe(element);
+
+  const dailyRecipeSection = document.querySelector('.daily-recipe');if(dailyRecipeSection) dailyRecipeSection.classList.add('visible');
 }
 
-// Применяем к рецепту дня
-const dailyRecipeSection = document.querySelector('.daily-recipe');
-if(dailyRecipeSection) animateOnScroll(dailyRecipeSection);
-  // Добавляем анимацию
-  card.classList.add("fade-in");
-}
 showDailyRecipe();
 
-// === Отзывы ===
-const reviewEls = document.querySelectorAll(".review");
+// Анимация отзывов через IntersectionObserver
+const reviews = document.querySelectorAll('.review');
 
-function animateOnScroll() {
-  const revealElements = document.querySelectorAll(".fade-in, .review");
-  const windowBottom = window.innerHeight + window.scrollY;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
 
-  revealElements.forEach(el => {
-    if(el.offsetTop < windowBottom - 50){
-      el.style.opacity = 1;
-      el.style.transform = "translateY(0)";
+    if(entry.isIntersecting){
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
     } else {
-      el.style.opacity = 0;
-      el.style.transform = "translateY(30px)";
+      entry.target.style.opacity = 0;
+      entry.target.style.transform = 'translateY(30px)';
     }
+
   });
-}
+}, { threshold: 0.3 }); // когда 30% блока видно
 
-// Начальное состояние для анимации
-document.querySelectorAll(".fade-in, .review").forEach(el => {
-  el.style.opacity = 0;
-  el.style.transform = "translateY(30px)";
+reviews.forEach(review => {
+  review.style.opacity = 0;
+  review.style.transform = 'translateY(30px)';
+  observer.observe(review);
 });
-
-// Отслеживание скролла
-window.addEventListener("scroll", animateOnScroll);
-animateOnScroll(); // проверка при загрузке страницы
+reviews.forEach(review => {
+  review.style.opacity = 0;
+  review.style.transform = 'translateY(30px)';
+  observer.observe(review);
+});
